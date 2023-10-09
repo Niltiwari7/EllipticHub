@@ -1,0 +1,20 @@
+/* sidebar.css */
+
+/* Sidebar container */
+.sidebar {
+    background-color: #f0f0f0;
+    padding: 16px;
+  }
+  
+  /* Sidebar links */
+  .sidebar a {
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  /* Sidebar link hover effect */
+  .sidebar a:hover {
+    color: #888;
+  }
+  

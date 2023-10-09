@@ -1,0 +1,27 @@
+
+ 
+/* Add responsive styles for screens smaller than 768px */
+ @media (max-width: 768px) {
+    .hero {
+      width: 70vw;
+    }
+    .a{
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+    .b{
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+    .c{
+        display: flex;
+        flex-direction: column;
+        gap:3.5rem ;
+    
+    }
+   
+  
+  } 
+  

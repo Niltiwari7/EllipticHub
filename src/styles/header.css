@@ -1,0 +1,82 @@
+/* styles.css */
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin: 0;
+  }
+  
+  /* Navigation styles */
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav li {
+    margin-right: 1rem;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+  }
+  
+  nav a:hover {
+    color: #ccc;
+  }
+  
+/* Add responsive styles for screens smaller than 768px */
+@media (max-width: 768px) {
+  .main {
+    padding: 2rem;
+  }
+
+  /* Add any other responsive styles you need for smaller screens */
+}
+
+/* Add responsive styles for screens larger than 768px */
+@media (min-width: 769px) {
+  .main {
+    padding: 10rem;
+    /* width: 100vw; */
+  }
+
+  /* Add any other responsive styles you need for larger screens */
+}
+/* Add responsive styles for screens smaller than 768px */
+@media (max-width: 768px) {
+  .main {
+    padding: 2rem;
+    width: 70vw;
+  }
+
+  /* Add any other responsive styles you need for smaller screens */
+}
+
+/* Add responsive styles for screens larger than 768px */
+@media (min-width: 769px) {
+  .main {
+    padding: 4rem;
+    /* width: 100vw; */
+  }
+
+  /* Add any other responsive styles you need for larger screens */
+}
+  

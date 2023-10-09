@@ -1,0 +1,41 @@
+/* Add responsive styles for screens smaller than 768px */
+@media (max-width: 768px) {
+    .main {
+      padding: 2rem;
+    }
+  
+    /* Add any other responsive styles you need for smaller screens */
+  }
+  
+  /* Add responsive styles for screens larger than 768px */
+  @media (min-width: 769px) {
+    .main {
+      padding: 10rem;
+        
+    }
+  
+    /* Add any other responsive styles you need for larger screens */
+  }
+/* Add responsive styles for screens smaller than 768px */
+@media (max-width: 768px) {
+    .main {
+   
+      width: 100vw;
+    }
+    .pointP{
+        display: flex;
+    }
+  
+    /* Add any other responsive styles you need for smaller screens */
+  }
+  
+  /* Add responsive styles for screens larger than 768px */
+  @media (min-width: 769px) {
+    .main {
+      padding: 4rem;
+    
+    }
+  
+    /* Add any other responsive styles you need for larger screens */
+  }
+    
