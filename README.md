@@ -20,3 +20,9 @@ Compute scalar multiplication of a point P on the elliptic curve by an integer k
 
 Identify torsion points on the elliptic curve, crucial for cryptography. Understanding torsion points enhances knowledge of the elliptic curve group structure, contributing to robust cryptographic algorithms.
 
+## ScreenShot
+
+![image](https://github.com/Niltiwari7/Elliptical_curve_website_project/assets/93751356/2256a4a9-d3df-4a4b-87f6-39cea0b02340)
+![image](https://github.com/Niltiwari7/Elliptical_curve_website_project/assets/93751356/936fee92-e52e-42bd-ad8b-999ad6dd42d6)
+![image](https://github.com/Niltiwari7/Elliptical_curve_website_project/assets/93751356/7a0e55fe-cf2b-4da9-aa9c-4cb69fe73f8d)
+![image](https://github.com/Niltiwari7/Elliptical_curve_website_project/assets/93751356/75db97ce-f6bf-4ff8-a252-f7b10ae38466)
