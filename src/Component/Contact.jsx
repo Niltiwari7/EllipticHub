@@ -27,10 +27,10 @@ function Contact() {
     <section className="bg-slate-500 min-h-screen m-2">
       <div className="main py-8 lg:py-16 px-4 mx-auto">
         <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-white">Contact Us</h2>
-        <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-white sm:text-xl">Give Your Valuable feedback</p>
+        <p className="mb-8 lg:mb-16 font-light text-center text-black dark:text-white sm:text-xl">Give Your Valuable feedback</p>
         <form  onSubmit={handleSubmit} className="space-y-8">
           <div>
-            <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your email</label>
+            <label htmlFor="email" className="block mb-2 text-sm font-medium text-black dark:text-gray-300">Your email</label>
             <input
               type="email"
               id="email"

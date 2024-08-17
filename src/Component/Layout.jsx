@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './Header';
 import Sidebar from './Sidebar';
@@ -11,13 +11,40 @@ import KP_of_elliptical_curve from './KP_of_elliptical_curve';
 import TorsionPoint from './TorsionPoint';
 
 const Layout = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
+
   return (
     <Router>
-      <div className="flex flex-col h-screen md:flex  w-screen">
+      <div className="flex flex-col h-screen w-[100%]">
         <Header />
-        <div className="flex flex-grow  md:flex w-screen">
-          <Sidebar />
-          <div className="flex-grow ">
+
+        {/* Hamburger Menu for Mobile */}
+        <div className="md:hidden p-4">
+          <button onClick={toggleSidebar} className="text-3xl focus:outline-none">
+            &#9776;
+          </button>
+        </div>
+
+        <div className="flex flex-grow">
+          {/* Sidebar */}
+          <div
+            className={`fixed inset-0 md:static md:flex md:flex-col md:w-1/4 bg-gray-200 p-4 transition-transform duration-300 z-50 ${
+              isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
+            } md:translate-x-0`}
+          >
+            <Sidebar closeSidebar={closeSidebar} />
+          </div>
+
+          {/* Main Content */}
+          <div className="flex-grow md:ml-1/4 p-4">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
@@ -28,6 +55,7 @@ const Layout = () => {
             </Routes>
           </div>
         </div>
+
         <Footer />
       </div>
     </Router>

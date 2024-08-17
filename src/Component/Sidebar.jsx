@@ -1,31 +1,60 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/sidebar.css'
-const Sidebar = () => {
+
+const Sidebar = ({ closeSidebar }) => {
   return (
-    <nav className="sidebar bg-gray-200 p-4">
-      <ul className="list-none p-0">
-        <li className="mb-4">
-          <Link to="/" className="text-xl text-black font-serif block hover:text-gray-400 cursor-pointer">
-            Solution of Elliptical Curve
-          </Link>
-        </li>
-        <li className="mb-4">
-          <Link to="/AdditionOfTwoPoint" className="text-xl text-black font-serif block hover:text-gray-400 cursor-pointer">
-            Addition of Two Points on Elliptical Curve
-          </Link>
-        </li>
-        <li className="mb-4">
-          <Link to="/KP_of_elliptical_curve" className="text-xl text-black font-serif block hover:text-gray-400 cursor-pointer">
-            Find K*P on Elliptical Curve
-          </Link>
-        </li>
-        <li>
-          <Link to="/TorsionPoint" className="text-xl text-black font-serif block hover:text-gray-400 cursor-pointer">
-            Finding the Torsion Point
-          </Link>
-        </li>
-      </ul>
+    <nav className="flex flex-col">
+      {/* Close Button for Sidebar */}
+      <button
+        onClick={closeSidebar}
+        className="self-end p-2 text-xl focus:outline-none"
+      >
+        &times;
+      </button>
+      
+      {/* Sidebar Links */}
+      <Link
+        to="/"
+        className="p-2 hover:bg-gray-300 focus:outline-none"
+        onClick={closeSidebar}
+      >
+        Home
+      </Link>
+      <Link
+        to="/about"
+        className="p-2 hover:bg-gray-300 focus:outline-none"
+        onClick={closeSidebar}
+      >
+        About
+      </Link>
+      <Link
+        to="/contact"
+        className="p-2 hover:bg-gray-300 focus:outline-none"
+        onClick={closeSidebar}
+      >
+        Contact
+      </Link>
+      <Link
+        to="/AdditionOfTwoPoint"
+        className="p-2 hover:bg-gray-300 focus:outline-none"
+        onClick={closeSidebar}
+      >
+        Addition of Two Points
+      </Link>
+      <Link
+        to="/KP_of_elliptical_curve"
+        className="p-2 hover:bg-gray-300 focus:outline-none"
+        onClick={closeSidebar}
+      >
+        KP of Elliptical Curve
+      </Link>
+      <Link
+        to="/TorsionPoint"
+        className="p-2 hover:bg-gray-300 focus:outline-none"
+        onClick={closeSidebar}
+      >
+        Torsion Point
+      </Link>
     </nav>
   );
 };
