@@ -22,7 +22,7 @@ function Contact() {
   };
 
   return (
-    <section className="bg-slate-500 min-h-screen m-2 flex justify-center items-center">
+    <section className="bg-white min-h-screen m-2 flex justify-center items-center dark:bg-gray-800">
       <div className="w-full max-w-lg bg-white rounded-lg shadow-md p-8">
         <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900">Contact Us</h2>
         <p className="mb-8 font-light text-center text-gray-600 sm:text-xl">Give Your Valuable Feedback</p>

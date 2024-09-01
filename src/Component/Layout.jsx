@@ -34,7 +34,7 @@ const Layout = () => {
         <div className="flex flex-grow">
           {/* Sidebar */}
           <div
-            className={`fixed inset-0 md:static md:flex md:flex-col md:w-1/4 bg-gray-200 p-4 transition-transform duration-300 z-50 ${
+            className={`fixed inset-0 md:static md:flex md:flex-col md:w-1/4 bg-gray-100 p-4 transition-transform duration-300 z-50 ${
               isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
             } md:translate-x-0`}
           >

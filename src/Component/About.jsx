@@ -3,9 +3,9 @@ import React from 'react';
 function About() {
   return (
     <main>
-      <div className="flex flex-wrap  justify-center">
+      <div className="flex flex-wrap  justify-center dark:bg-gray-800">
         {/* Card 1 */}
-        <div className="max-w-lg mx-auto my-10 bg-white rounded-lg shadow-md p-5">
+        <div className="max-w-lg mx-auto my-10 bg-white rounded-lg shadow-md p-5  ">
           <img className="w-32 h-32 rounded-full mx-auto" src="https://typeset-partner-institution.s3.amazonaws.com/author-images/kalyan-banerjee/c20a252b-4edf-4cb4-ac82-1df34506e811/author.jpg" alt="Profile picture" />
           <h2 className="text-center text-2xl font-semibold mt-3">Kalyan Banerjee</h2>
           <p className="text-center text-gray-600 mt-1">Associate Professor at VIT Chennai </p>

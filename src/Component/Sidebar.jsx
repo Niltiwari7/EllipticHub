@@ -56,7 +56,8 @@ const Sidebar = ({ closeSidebar }) => {
       >
         Torsion Point
       </Link>
-    </nav>
+
+     </nav>
   );
 };
 

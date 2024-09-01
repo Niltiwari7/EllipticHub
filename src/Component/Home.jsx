@@ -76,63 +76,67 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="max-w-3xl w-full bg-white shadow-lg rounded-lg p-4">
+    <div className="flex flex-col items-center justify-center min-h-screen px-3 bg-gray-100 dark:bg-gray-800">
+      <div className="w-full max-w-4xl bg-white shadow-lg p-6 rounded-lg">
         <div className="sol_of_elliptical">
-          <div className="mb-6">
-            <h2 className="text-xl sm:text-4xl text-center  text-gray-900 mb-4">Solution of Elliptical Curve</h2>
-            <h2 className="text-xl sm:text-2xl text-center text-gray-700 mb-6">
-              For elliptic curve <span className="text-red-500">E(F<sub>p</sub>)</span>: Y<sup>2</sup> = X<sup>3</sup> + AX + B, <span className="text-green-500">p prime</span>
-            </h2>
-            <div className="w-full">
-              <div className="flex flex-col space-y-4">
-                <div className="flex flex-col">
-                  <label className="font-bold text-center sm:text-xl">Enter the coefficient of 'a':</label>
-                  <input
-                    type="text"
-                    id="a"
-                    className="border rounded w-full px-2 py-1"
-                    value={a}
-                    onChange={(e) => setA(e.target.value)}
-                  />
-                </div>
-
-                <div className="flex flex-col">
-                  <label className="font-bold text-center sm:text-xl">Enter the coefficient of 'b':</label>
-                  <input
-                    type="text"
-                    id="b"
-                    className="border rounded w-full px-2 py-1"
-                    value={b}
-                    onChange={(e) => setB(e.target.value)}
-                  />
-                </div>
-
-                <div className="flex flex-col">
-                  <label className="font-bold text-center sm:text-xl">Enter the modulo 'p':</label>
-                  <input
-                    type="text"
-                    id="p"
-                    className="border rounded w-full px-2 py-1"
-                    value={p}
-                    onChange={(e) => setP(e.target.value)}
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="flex justify-center pt-6">
-              <button
-                ref={buttonRef}
-                className="bg-blue-800 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
-                onClick={calculatePoints}
-              >
-                Calculate
-              </button>
-            </div>
+          <h2 className="text-2xl sm:text-5xl text-blue-900 text-center ">Solution of Elliptical Curve</h2>
+          <div className="text-xl sm:text-3xl pb-2 text-center description">
+            For elliptic curve <span className="text-red-500">E(F<sub>p</sub>)</span>: Y<sup>2</sup> = X<sup>3</sup> + AX + B, <span className="text-green-500">p prime</span>
+          </div>
+          <div className="pt-3">
+            <table className="table-auto w-full text-base sm:text-xl">
+              <tbody>
+                <tr className="table-input">
+                  <td className="px-2 py-3 text-right font-bold">Enter the coefficient of 'a':</td>
+                  <td>
+                    <input
+                      type="text"
+                      id="a"
+                      className="border rounded w-full px-2 py-1"
+                      value={a}
+                      onChange={(e) => setA(e.target.value)}
+                    />
+                  </td>
+                </tr>
+                <tr className="table-input">
+                  <td className="px-2 py-3 text-right font-bold">Enter the coefficient of 'b':</td>
+                  <td>
+                    <input
+                      type="text"
+                      id="b"
+                      className="border rounded w-full px-2 py-1"
+                      value={b}
+                      onChange={(e) => setB(e.target.value)}
+                    />
+                  </td>
+                </tr>
+                <tr className="table-input">
+                  <td className="px-2 py-3 text-right font-bold">Enter the modulo 'p':</td>
+                  <td>
+                    <input
+                      type="text"
+                      id="p"
+                      className="border rounded w-full px-2 py-1"
+                      value={p}
+                      onChange={(e) => setP(e.target.value)}
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
-          <div className="text-center pb-4 text-2xl sm:text-3xl">
+          <div className="flex justify-center pt-6">
+            <button
+              ref={buttonRef}
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+              onClick={calculatePoints}
+            >
+              Calculate
+            </button>
+          </div>
+
+          <div className="text-center pb-5  pt-5 text-2xl sm:text-3xl result-text">
             <h2>Points on Elliptical Curve</h2>
           </div>
 

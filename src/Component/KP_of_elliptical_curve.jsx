@@ -150,10 +150,10 @@ const KP_of_elliptical_curve = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-gray-100 p-4">
-      <div className="w-full max-w-4xl bg-white shadow-lg rounded-lg p-6">
+    <div className="flex flex-col items-center justify-center min-h-screen px-3 bg-gray-100 dark:bg-gray-800">
+      <div className="w-full max-w-4xl bg-white shadow-lg p-6 rounded-lg">
         <div className="text-center mb-6">
-          <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 sm:main">Find K*P of the Elliptical Curve</h2>
+          <h2 className="text-2xl sm:text-5xl text-blue-900 text-center">Find K*P of the Elliptical Curve</h2>
           <p className="text-lg sm:text-2xl text-gray-700 description">
             For elliptic curve <span className="text-red-500">E(F<sub>p</sub>)</span>: Y<sup>2</sup> = X<sup>3</sup> + AX + B, <span className="text-green-500">p prime</span>
           </p>
@@ -187,7 +187,7 @@ const KP_of_elliptical_curve = () => {
         <div className="flex justify-center mb-6">
           <button
             ref={buttonRef}
-            className="bg-blue-800 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
             onClick={handleCalculate}
           >
             Calculate

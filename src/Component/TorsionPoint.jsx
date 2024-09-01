@@ -9,6 +9,7 @@ const TorsionPoint = () => {
   const [y, setY] = useState('');
   const [result, setResult] = useState('');
 
+  // Function to add points on the elliptic curve
   const ECC_point_addition = (P, Q, a, b, p) => {
     if (P[0] === -1 && P[1] === -1) {
       return Q;
@@ -53,6 +54,7 @@ const TorsionPoint = () => {
     }
   };
 
+  // Function to find the modular inverse
   const modInverse = (a, m) => {
     let m0 = m;
     let x0 = 0;
@@ -81,6 +83,7 @@ const TorsionPoint = () => {
     return x1;
   };
 
+  // Function to find the torsion order
   const find_torsion_order = (P, a, b, p) => {
     let R = P;
     let order = 1;
@@ -94,6 +97,7 @@ const TorsionPoint = () => {
     return order;
   };
 
+  // Calculate torsion order
   const handleCalculate = () => {
     const aInt = parseFloat(a);
     const bInt = parseFloat(b);
@@ -115,6 +119,7 @@ const TorsionPoint = () => {
 
   const buttonRef = useRef(null);
 
+  // GSAP Animations
   useEffect(() => {
     gsap.to(buttonRef.current, {
       duration: 1,
@@ -160,10 +165,10 @@ const TorsionPoint = () => {
   }, []);
 
   return (
-    <div className="hero flex flex-col md:flex-row md:flex-wrap items-center">
-      <div className="content bg-white flex-grow px-5 h-auto w-full md:w-[50vw]">
+    <div className="hero flex flex-col md:flex-row md:flex-wrap items-center min-h-screen bg-gray-100 dark:bg-gray-800 px-5 py-10">
+      <div className="content bg-white flex-grow px-5 py-8 h-auto w-full md:w-[50vw] rounded-lg shadow-lg">
         <div className="text-center">
-          <h2 className="text-2xl sm:text-4xl text-gray-900 sm:main">Finding The Torsion Point</h2>
+          <h2 className="text-2xl sm:text-5xl text-blue-900 text-center ">Finding The Torsion Point</h2>
           <h3 className="text-xl sm:text-2xl text-gray-700 description">
             For elliptic curve <span className="text-red-500">E(F<sub>p</sub>)</span>: Y<sup>2</sup> = X<sup>3</sup> + AX + B, <span className="text-green-500">p prime</span>
           </h3>
@@ -231,20 +236,20 @@ const TorsionPoint = () => {
                   />
                 </td>
               </tr>
+              <tr className="table-input">
+                <td colSpan="2" className="text-center py-4">
+                  <button
+                    ref={buttonRef}
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                    onClick={handleCalculate}
+                  >
+                    Calculate
+                  </button>
+                </td>
+              </tr>
             </tbody>
           </table>
-        </div>
-        <div className="flex justify-center py-5">
-          <button
-            ref={buttonRef}
-            className="bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            onClick={handleCalculate}
-          >
-            Calculate
-          </button>
-        </div>
-        <div className="text-xl sm:text-2xl font-bold text-blue-500 text-center result-text">
-          {result}
+          <p className="text-center mt-5 text-lg sm:text-xl result-text">{result}</p>
         </div>
       </div>
     </div>

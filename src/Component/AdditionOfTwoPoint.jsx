@@ -161,7 +161,7 @@ const AdditionOfTwoPoint = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-3 bg-gray-100">
+    <div className="flex flex-col items-center justify-center min-h-screen px-3 bg-gray-100 dark:bg-gray-800">
       <div className="w-full max-w-4xl bg-white shadow-lg p-6 rounded-lg">
         <div className="AdditionOfTwoPoint">
           <div className="text-2xl sm:text-5xl text-blue-900 text-center ">
@@ -268,7 +268,7 @@ const AdditionOfTwoPoint = () => {
           <div className="flex justify-center pt-5">
             <button
               ref={buttonRef}
-              className="bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
               onClick={handleCalculate}
             >
               Calculate
