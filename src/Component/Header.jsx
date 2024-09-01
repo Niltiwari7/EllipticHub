@@ -16,10 +16,11 @@ const Header = () => {
     <header className="w-full bg-white dark:bg-black text-black dark:text-white">
       <nav className="w-full p-6 flex justify-between items-center">
         <div className="flex-grow flex justify-between items-center max-w-4xl mx-auto">
-          <h1 className="text-3xl">
+          <h1 className="text-3xl whitespace-wrap">
             <Link to="/" className="hover:text-gray-400 ">
-              EllipticHub
+              Elliptic  
             </Link>
+            <span>Hub</span>
           </h1>
           <ul className="flex gap-5 items-center px-4 sm:p-0">
             <li>
