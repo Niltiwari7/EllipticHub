@@ -1,6 +1,6 @@
-# Elliptical Curve Calculator
+# EllipticHub
 
-Welcome to the Elliptical Curve Calculator, a versatile tool for performing advanced operations on elliptic curves. This platform empowers users with the capabilities needed for cryptographic applications, providing a user-friendly interface to explore and manipulate elliptic curve parameters.
+Welcome to the EllipticHub, a versatile tool for performing advanced operations on elliptic curves. This platform empowers users with the capabilities needed for cryptographic applications, providing a user-friendly interface to explore and manipulate elliptic curve parameters. It is responsible in both screen mobile and desktop.
 
 ## Features
 
@@ -22,7 +22,8 @@ Identify torsion points on the elliptic curve, crucial for cryptography. Underst
 
 ## ScreenShot
 
-![image](https://github.com/Niltiwari7/Elliptical_curve_website_project/assets/93751356/2256a4a9-d3df-4a4b-87f6-39cea0b02340)
-![image](https://github.com/Niltiwari7/Elliptical_curve_website_project/assets/93751356/936fee92-e52e-42bd-ad8b-999ad6dd42d6)
-![image](https://github.com/Niltiwari7/Elliptical_curve_website_project/assets/93751356/7a0e55fe-cf2b-4da9-aa9c-4cb69fe73f8d)
-![image](https://github.com/Niltiwari7/Elliptical_curve_website_project/assets/93751356/75db97ce-f6bf-4ff8-a252-f7b10ae38466)
+![image](https://github.com/user-attachments/assets/b7422307-e545-40b1-936e-ef764189793a)
+![image](https://github.com/user-attachments/assets/e9e81a2a-93b3-4d2a-b428-24c435b7225d)
+![image](https://github.com/user-attachments/assets/17a925a8-5fba-4d57-b575-155134ba50f4)
+
+
