@@ -25,8 +25,6 @@ const Layout = () => {
     <Router>
       <div className="flex flex-col h-screen w-[100%]">
         <Header />
-
-        {/* Hamburger Menu for Mobile */}
         <div className="md:hidden p-4">
           <button onClick={toggleSidebar} className="text-3xl focus:outline-none">
             &#9776;
@@ -43,10 +41,10 @@ const Layout = () => {
             <Sidebar closeSidebar={closeSidebar} />
           </div>
 
-          {/* Main Content */}
           <div className="flex-grow md:ml-1/4 p-4">
             <Routes>
               <Route path="/" element={<Home />} />
+               
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/AdditionOfTwoPoint" element={<AdditionOfTwoPoint />} />

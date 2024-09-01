@@ -162,105 +162,89 @@ const TorsionPoint = () => {
   return (
     <div className="hero flex flex-col md:flex-row md:flex-wrap items-center">
       <div className="content bg-white flex-grow px-5 h-auto w-full md:w-[50vw]">
-        <div className="AdditionOfTwopoint">
-          <div className="text-2xl sm:text-5xl text-white text-center md:text-center main">
-            Finding The Torsion Point
-          </div>
-          <div className="text-2xl sm:text-4xl pb-2 text-center md:text-center description">
+        <div className="text-center">
+          <h2 className="text-2xl sm:text-4xl text-gray-900 sm:main">Finding The Torsion Point</h2>
+          <h3 className="text-xl sm:text-2xl text-gray-700 description">
             For elliptic curve <span className="text-red-500">E(F<sub>p</sub>)</span>: Y<sup>2</sup> = X<sup>3</sup> + AX + B, <span className="text-green-500">p prime</span>
-          </div>
-
-          <div className="pt-3">
-            <table className="table-auto w-full text-base sm:text-xl">
-              <tbody>
-                <tr className="flex flex-col sm:flex-row table-input">
-                  <td className="px-2 py-3 text-right font-bold sm:w-1/2">
-                    Enter the coefficient of 'a':
-                  </td>
-                  <td className="px-4 py-2 sm:w-1/2">
-                    <input
-                      type="text"
-                      id="a"
-                      value={a}
-                      onChange={(e) => setA(e.target.value)}
-                      className="border rounded-lg w-full sm:w-[80%] px-2 py-1"
-                    />
-                  </td>
-                </tr>
-                <tr className="flex flex-col sm:flex-row table-input">
-                  <td className="px-2 py-3 text-right font-bold sm:w-1/2">
-                    Enter the coefficient of 'b':
-                  </td>
-                  <td className="px-4 py-2 sm:w-1/2">
-                    <input
-                      type="text"
-                      id="b"
-                      value={b}
-                      onChange={(e) => setB(e.target.value)}
-                      className="border rounded-lg w-full sm:w-[80%] px-2 py-1"
-                    />
-                  </td>
-                </tr>
-                <tr className="flex flex-col sm:flex-row table-input">
-                  <td className="px-2 py-3 text-right font-bold sm:w-1/2">
-                    Enter the modulo 'p':
-                  </td>
-                  <td className="px-4 py-2 sm:w-1/2">
-                    <input
-                      type="text"
-                      id="p"
-                      value={p}
-                      onChange={(e) => setP(e.target.value)}
-                      className="border rounded-lg w-full sm:w-[80%] px-2 py-1"
-                    />
-                  </td>
-                </tr>
-                <tr className="flex flex-col sm:flex-row table-input">
-                  <td className="px-2 py-3 text-right font-bold sm:w-1/2">
-                    Enter the x-coordinate of Point P:
-                  </td>
-                  <td className="px-4 py-2 sm:w-1/2">
-                    <input
-                      type="text"
-                      id="x"
-                      value={x}
-                      onChange={(e) => setX(e.target.value)}
-                      className="border rounded-lg w-full sm:w-[80%] px-2 py-1"
-                    />
-                  </td>
-                </tr>
-                <tr className="flex flex-col sm:flex-row table-input">
-                  <td className="px-2 py-3 text-right font-bold sm:w-1/2">
-                    Enter the y-coordinate of Point P:
-                  </td>
-                  <td className="px-4 py-2 sm:w-1/2">
-                    <input
-                      type="text"
-                      id="y"
-                      value={y}
-                      onChange={(e) => setY(e.target.value)}
-                      className="border rounded-lg w-full sm:w-[80%] px-2 py-1"
-                    />
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div className="flex justify-center pt-5">
-            <button
-              ref={buttonRef}
-              className="bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-              onClick={handleCalculate}
-            >
-              Calculate
-            </button>
-          </div>
-          <div
-            id="resultContainer"
-            className="pt-5 pb-5 text-2xl sm:text-3xl font-bold text-blue-500 text-center md:text-left result-text"
+          </h3>
+        </div>
+        <div className="pt-5">
+          <table className="table-auto w-full text-base sm:text-lg">
+            <tbody>
+              <tr className="table-input">
+                <td className="px-2 py-3 text-right font-bold">Enter the coefficient of 'a':</td>
+                <td className="px-2 py-3">
+                  <input
+                    type="text"
+                    id="a"
+                    value={a}
+                    onChange={(e) => setA(e.target.value)}
+                    className="border rounded-lg w-full sm:w-[80%] px-2 py-1"
+                  />
+                </td>
+              </tr>
+              <tr className="table-input">
+                <td className="px-2 py-3 text-right font-bold">Enter the coefficient of 'b':</td>
+                <td className="px-2 py-3">
+                  <input
+                    type="text"
+                    id="b"
+                    value={b}
+                    onChange={(e) => setB(e.target.value)}
+                    className="border rounded-lg w-full sm:w-[80%] px-2 py-1"
+                  />
+                </td>
+              </tr>
+              <tr className="table-input">
+                <td className="px-2 py-3 text-right font-bold">Enter the modulo 'p':</td>
+                <td className="px-2 py-3">
+                  <input
+                    type="text"
+                    id="p"
+                    value={p}
+                    onChange={(e) => setP(e.target.value)}
+                    className="border rounded-lg w-full sm:w-[80%] px-2 py-1"
+                  />
+                </td>
+              </tr>
+              <tr className="table-input">
+                <td className="px-2 py-3 text-right font-bold">Enter the x-coordinate of Point P:</td>
+                <td className="px-2 py-3">
+                  <input
+                    type="text"
+                    id="x"
+                    value={x}
+                    onChange={(e) => setX(e.target.value)}
+                    className="border rounded-lg w-full sm:w-[80%] px-2 py-1"
+                  />
+                </td>
+              </tr>
+              <tr className="table-input">
+                <td className="px-2 py-3 text-right font-bold">Enter the y-coordinate of Point P:</td>
+                <td className="px-2 py-3">
+                  <input
+                    type="text"
+                    id="y"
+                    value={y}
+                    onChange={(e) => setY(e.target.value)}
+                    className="border rounded-lg w-full sm:w-[80%] px-2 py-1"
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div className="flex justify-center py-5">
+          <button
+            ref={buttonRef}
+            className="bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            onClick={handleCalculate}
           >
-            {result}
-          </div>
+            Calculate
+          </button>
+        </div>
+        <div className="text-xl sm:text-2xl font-bold text-blue-500 text-center result-text">
+          {result}
         </div>
       </div>
     </div>

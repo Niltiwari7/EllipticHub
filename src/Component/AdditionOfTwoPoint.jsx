@@ -116,7 +116,6 @@ const AdditionOfTwoPoint = () => {
     }
   };
 
-
   const buttonRef = useRef(null);
   useEffect(() => {
     gsap.to(buttonRef.current, {
@@ -161,119 +160,104 @@ const AdditionOfTwoPoint = () => {
 
   }, []);
 
-
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-4">
+    <div className="flex flex-col items-center justify-center min-h-screen px-3 bg-gray-100">
       <div className="w-full max-w-4xl bg-white shadow-lg p-6 rounded-lg">
         <div className="AdditionOfTwoPoint">
-          <div className="text-2xl sm:text-5xl text-white text-center md:text-center main">
-            Addition of Two Points on Elliptical Curve
+          <div className="text-2xl sm:text-5xl text-blue-900 text-center ">
+            Addition of Two Points on Elliptic Curve
           </div>
-          <div className="text-2xl sm:text-4xl  pb-2 text-center md:text-center description">
+          <div className="text-xl sm:text-3xl pb-2 text-center description">
             For an elliptic curve
-            <span className="text-red-500 px-3">E(F<sub>p</sub>)</span>:
+            <span className="text-red-500 px-2">E(F<sub>p</sub>)</span>:
             Y<sup>2</sup> = X<sup>3</sup> + AX + B,
             <span className="text-green-500">p prime</span>
           </div>
 
           <div className="pt-3">
-            <table className="table-auto w-full text-base sm:text-xl ">
+            <table className="table-auto w-full text-base sm:text-xl">
               <tbody>
-                <tr className="flex flex-col sm:flex-row table-input">
-                  <td className="px-2 py-3 text-center font-serif font-bold sm:w-1/2 ">
-                    Enter the coefficient of 'a':
-                  </td>
-                  <td className="px-4 py-2 sm:w-1/2">
+                <tr className="table-input">
+                  <td className="px-2 py-3 text-right font-bold">Enter the coefficient of 'a':</td>
+                  <td className="px-2 py-3">
                     <input
                       type="text"
                       id="a"
-                      className="border rounded   px-2 py-1 w-[80%]"
                       value={a}
                       onChange={(e) => setA(e.target.value)}
+                      className="border rounded-lg w-full sm:w-[80%] px-2 py-1"
                     />
                   </td>
                 </tr>
-                <tr className="flex flex-col sm:flex-row table-input ">
-                  <td className="px-2 py-3 text-center font-serif font-bold sm:w-1/2">
-                    Enter the coefficient of 'b':
-                  </td>
-                  <td className="px-4 py-2 sm:w-1/2">
+                <tr className="table-input">
+                  <td className="px-2 py-3 text-right font-bold">Enter the coefficient of 'b':</td>
+                  <td className="px-2 py-3">
                     <input
                       type="text"
                       id="b"
-                      className="border rounded px-2 py-1 w-[80%]"
                       value={b}
                       onChange={(e) => setB(e.target.value)}
+                      className="border rounded-lg w-full sm:w-[80%] px-2 py-1"
                     />
                   </td>
                 </tr>
-                <tr className="flex flex-col sm:flex-row table-input">
-                  <td className="px-2 py-3 text-center font-serif font-bold sm:w-1/2">
-                    Enter the modulo 'p':
-                  </td>
-                  <td className="px-4 py-2 sm:w-1/2">
+                <tr className="table-input">
+                  <td className="px-2 py-3 text-right font-bold">Enter the modulo 'p':</td>
+                  <td className="px-2 py-3">
                     <input
                       type="text"
-                      id="c"
-                      className="border rounded px-2 py-1 w-[80%]"
+                      id="p"
                       value={p}
                       onChange={(e) => setP(e.target.value)}
+                      className="border rounded-lg w-full sm:w-[80%] px-2 py-1"
                     />
                   </td>
                 </tr>
-                <tr className="flex flex-col sm:flex-row table-input">
-                  <td className="px-2 py-3 text-center font-serif font-bold sm:w-1/2">
-                    Enter the x-coordinate of Point P:
-                  </td>
-                  <td className="px-4 py-2 sm:w-1/2">
+                <tr className="table-input">
+                  <td className="px-2 py-3 text-right font-bold">Enter the x-coordinate of Point P:</td>
+                  <td className="px-2 py-3">
                     <input
                       type="number"
-                      id="x"
-                      className="border rounded px-2 py-1 w-[80%]"
+                      id="x1"
                       value={x1}
                       onChange={(e) => setX1(e.target.value)}
+                      className="border rounded-lg w-full sm:w-[80%] px-2 py-1"
                     />
                   </td>
                 </tr>
-                <tr className="flex flex-col sm:flex-row table-input">
-                  <td className="px-2 py-3 text-center font-serif font-bold sm:w-1/2">
-                    Enter the y-coordinate of Point P:
-                  </td>
-                  <td className="px-4 py-2 sm:w-1/2">
+                <tr className="table-input">
+                  <td className="px-2 py-3 text-right font-bold">Enter the y-coordinate of Point P:</td>
+                  <td className="px-2 py-3">
                     <input
                       type="number"
-                      id="y"
-                      className="border rounded px-2 py-1 w-[80%]"
+                      id="y1"
                       value={y1}
                       onChange={(e) => setY1(e.target.value)}
+                      className="border rounded-lg w-full sm:w-[80%] px-2 py-1"
                     />
                   </td>
                 </tr>
-                <tr className="flex flex-col sm:flex-row table-input">
-                  <td className="px-2 py-3 text-center font-serif font-bold sm:w-1/2">
-                    Enter the x-coordinate of Point Q:
-                  </td>
-                  <td className="px-4 py-2 sm:w-1/2">
+                <tr className="table-input">
+                  <td className="px-2 py-3 text-right font-bold">Enter the x-coordinate of Point Q:</td>
+                  <td className="px-2 py-3">
                     <input
                       type="number"
-                      id="qx"
-                      className="border rounded px-2 py-1 w-[80%]"
+                      id="x2"
                       value={x2}
                       onChange={(e) => setX2(e.target.value)}
+                      className="border rounded-lg w-full sm:w-[80%] px-2 py-1"
                     />
                   </td>
                 </tr>
-                <tr className="flex flex-col sm:flex-row table-input">
-                  <td className="px-2 py-3 text-center font-serif font-bold sm:w-1/2">
-                    Enter the y-coordinate of Point Q:
-                  </td>
-                  <td className="px-4 py-2 sm:w-1/2">
+                <tr className="table-input">
+                  <td className="px-2 py-3 text-right font-bold">Enter the y-coordinate of Point Q:</td>
+                  <td className="px-2 py-3">
                     <input
                       type="number"
-                      id="qy"
-                      className="border rounded px-2 py-1 w-[80%]"
+                      id="y2"
                       value={y2}
                       onChange={(e) => setY2(e.target.value)}
+                      className="border rounded-lg w-full sm:w-[80%] px-2 py-1"
                     />
                   </td>
                 </tr>
@@ -284,14 +268,14 @@ const AdditionOfTwoPoint = () => {
           <div className="flex justify-center pt-5">
             <button
               ref={buttonRef}
-              className="bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded "
+              className="bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               onClick={handleCalculate}
             >
               Calculate
             </button>
           </div>
 
-          <div className="pt-5 pb-5 text-2xl sm:text-3xl font-bold text-yellow-500 text-center md:text-left result-text main">
+          <div className="pt-5 text-xl sm:text-2xl font-bold text-yellow-500 text-center result-text">
             {result}
           </div>
         </div>

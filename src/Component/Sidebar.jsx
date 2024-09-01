@@ -3,23 +3,24 @@ import { Link } from 'react-router-dom';
 
 const Sidebar = ({ closeSidebar }) => {
   return (
-    <nav className="flex flex-col">
+    <nav className="flex flex-col ">
       {/* Close Button for Sidebar */}
       <button
         onClick={closeSidebar}
-        className="self-end p-2 text-xl focus:outline-none"
+        className="self-end p-2 text-xl focus:outline-none sm:hidden "
       >
         &times;
       </button>
       
       {/* Sidebar Links */}
-      <Link
+       <Link
         to="/"
         className="p-2 hover:bg-gray-300 focus:outline-none"
         onClick={closeSidebar}
       >
-        Home
+       Solution of Elliptical curve
       </Link>
+      {/*
       <Link
         to="/about"
         className="p-2 hover:bg-gray-300 focus:outline-none"
@@ -33,7 +34,7 @@ const Sidebar = ({ closeSidebar }) => {
         onClick={closeSidebar}
       >
         Contact
-      </Link>
+      </Link> */}
       <Link
         to="/AdditionOfTwoPoint"
         className="p-2 hover:bg-gray-300 focus:outline-none"

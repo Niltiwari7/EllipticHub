@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-
 import gsap from 'gsap';
 
 const KP_of_elliptical_curve = () => {
@@ -151,118 +150,52 @@ const KP_of_elliptical_curve = () => {
   }, []);
 
   return (
-    <div className="hero flex flex-col md:flex-row md:flex-wrap items-center">
-      <div className="content bg-white flex-grow px-5 h-auto w-full md:w-[50vw] ">
-        <div className="KP_of_the_elliptical_curve">
-          <div className="text-2xl sm:text-5xl text-white text-center md:text-center main">Find K*P of the Elliptical Curve</div>
-          <div className="w-full text-2xl sm:text-4xl pb-2 text-center md:text-center description pr-2">
-            For elliptic curve <span className="text-red-500 whitespace-normal">E(F<sub>p</sub>)</span>: Y<sup>2</sup> = X<sup>3</sup>  + AX + B, <span className="text-green-500">p prime</span>
-          </div>
-          <div className="pt-3">
-            <table className="table-auto w-full text-base sm:text-xl">
-              <tbody>
-                <tr className="flex flex-col sm:flex-row table-input">
-                  <td className="px-2 sm:py-3 text-center font-bold sm:w-1/2">
-                    Enter the coefficient of 'a':
-                  </td>
-                  <td className="sm:px-4 py-2 sm:w-1/2">
-                    <input
-                      type="text"
-                      id="a"
-                      value={a}
-                      onChange={(e) => setA(e.target.value)}
-                      className="border rounded-lg w-[80%] px-2 py-1"
-                    />
-                  </td>
-                </tr>
-                <tr className="flex flex-col sm:flex-row table-input">
-                  <td className="sm:px-2 py-3 text-center font-bold sm:w-1/2">
-                    Enter the coefficient of 'b':
-                  </td>
-                  <td className="sm:px-4 py-2 sm:w-1/2">
-                    <input
-                      type="text"
-                      id="b"
-                      value={b}
-                      onChange={(e) => setB(e.target.value)}
-                      className="border rounded-lg w-[80%] sm:px-2 py-1"
-                    />
-                  </td>
-                </tr>
-                <tr className="flex flex-col sm:flex-row table-input">
-                  <td className="px-2 py-3 text-center font-bold sm:w-1/2">
-                    Enter the modulo 'p':
-                  </td>
-                  <td className="px-4 py-2 sm:w-1/2">
-                    <input
-                      type="text"
-                      id="p"
-                      value={p}
-                      onChange={(e) => setP(e.target.value)}
-                      className="border rounded-lg  w-[80%] px-2 py-1"
-                    />
-                  </td>
-                </tr>
-                <tr className="flex flex-col sm:flex-row table-input">
-                  <td className="px-2 py-3 text-center font-bold sm:w-1/2">
-                    Enter the x-coordinate of Point P:
-                  </td>
-                  <td className="px-4 py-2 sm:w-1/2">
-                    <input
-                      type="text"
-                      id="x"
-                      value={x}
-                      onChange={(e) => setX(e.target.value)}
-                      className="border rounded-lg  w-[80%] px-2 py-1"
-                    />
-                  </td>
-                </tr>
-                <tr className="flex flex-col sm:flex-row table-input">
-                  <td className="px-2 py-3 text-center font-bold sm:w-1/2">
-                    Enter the y-coordinate of Point P:
-                  </td>
-                  <td className="px-4 py-2 sm:w-1/2">
-                    <input
-                      type="text"
-                      id="y"
-                      value={y}
-                      onChange={(e) => setY(e.target.value)}
-                      className="border rounded-lg  w-[80%] px-2 py-1"
-                    />
-                  </td>
-                </tr>
-                <tr className="flex flex-col sm:flex-row table-input">
-                  <td className="px-2 py-3 text-center font-bold sm:w-1/2">
-                    Enter the K value:
-                  </td>
-                  <td className="px-4 py-2 sm:w-1/2">
-                    <input
-                      type="text"
-                      id="k"
-                      value={k}
-                      onChange={(e) => setK(e.target.value)}
-                      className="border rounded-lg  w-[80%] px-2 py-1"
-                    />
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div className="flex justify-center pt-5">
-            <button
-              ref={buttonRef}
-              className="bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-              onClick={handleCalculate}
-            >
-              Calculate
-            </button>
-          </div>
-          <div
-            id="resultContainer"
-            className="pt-5 pb-5 text-2xl sm:text-3xl font-bold text-blue-500 text-center md:text-left result-text"
+    <div className="flex flex-col items-center min-h-screen bg-gray-100 p-4">
+      <div className="w-full max-w-4xl bg-white shadow-lg rounded-lg p-6">
+        <div className="text-center mb-6">
+          <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 sm:main">Find K*P of the Elliptical Curve</h2>
+          <p className="text-lg sm:text-2xl text-gray-700 description">
+            For elliptic curve <span className="text-red-500">E(F<sub>p</sub>)</span>: Y<sup>2</sup> = X<sup>3</sup> + AX + B, <span className="text-green-500">p prime</span>
+          </p>
+        </div>
+
+        <table className="w-full text-base sm:text-xl mb-6">
+          <tbody>
+            {[
+              { label: "Enter the coefficient of 'a':", value: a, setter: setA },
+              { label: "Enter the coefficient of 'b':", value: b, setter: setB },
+              { label: "Enter the modulo 'p':", value: p, setter: setP },
+              { label: "Enter the x-coordinate of Point P:", value: x, setter: setX },
+              { label: "Enter the y-coordinate of Point P:", value: y, setter: setY },
+              { label: "Enter the K value:", value: k, setter: setK }
+            ].map(({ label, value, setter }, index) => (
+              <tr key={index} className="flex flex-col sm:flex-row table-input">
+                <td className="px-2 py-3 text-center font-bold sm:w-1/2">{label}</td>
+                <td className="px-4 py-2 sm:w-1/2">
+                  <input
+                    type="text"
+                    value={value}
+                    onChange={(e) => setter(e.target.value)}
+                    className="border rounded-lg w-full px-2 py-1"
+                  />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+        <div className="flex justify-center mb-6">
+          <button
+            ref={buttonRef}
+            className="bg-blue-800 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+            onClick={handleCalculate}
           >
-            {result}
-          </div>
+            Calculate
+          </button>
+        </div>
+
+        <div className="text-center text-2xl sm:text-3xl font-bold text-blue-500 result-text">
+          {result}
         </div>
       </div>
     </div>

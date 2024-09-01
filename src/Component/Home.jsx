@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-
 import gsap from 'gsap';
 
 const Home = () => {
@@ -13,13 +12,13 @@ const Home = () => {
     const bInt = parseInt(b);
     const pInt = parseInt(p);
     const calculatedPoints = [];
-   
+
     if (4 * aInt ** 3 + 27 * bInt ** 2 === 0) {
       console.log("Elliptical curve Not Possible");
     } else {
       const result1 = Array.from({ length: pInt }, (_, x) => (x ** 3 + aInt * x + bInt) % pInt);
       const result2 = Array.from({ length: pInt }, (_, x) => (x ** 2) % pInt);
-     
+
       for (let i = 0; i < result1.length; i++) {
         for (let j = 0; j < result2.length; j++) {
           if (result1[i] === result2[j]) {
@@ -77,68 +76,55 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="hero flex flex-col md:flex-row md:flex-wrap items-center">
-      <div className="content bg-white flex-grow px-5 w-full md:w-[50vw] min-h-screen ">
+    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+      <div className="max-w-3xl w-full bg-white shadow-lg rounded-lg p-4">
         <div className="sol_of_elliptical">
-          <h2 className="text-2xl sm:text-5xl text-white text-center md:text-center main">Solution of Elliptical Curve</h2>
-          <h2 className="text-2xl sm:text-4xl pb-2 text-center md:text-center description">
-            For elliptic curve <span className="text-red-500">E(F<sub>p</sub>)</span>: Y<sup>2</sup> = X<sup>3</sup> + AX + B, <span className="text-green-500">p prime</span>
-          </h2>
+          <div className="mb-6">
+            <h2 className="text-xl sm:text-4xl text-center  text-gray-900 mb-4">Solution of Elliptical Curve</h2>
+            <h2 className="text-xl sm:text-2xl text-center text-gray-700 mb-6">
+              For elliptic curve <span className="text-red-500">E(F<sub>p</sub>)</span>: Y<sup>2</sup> = X<sup>3</sup> + AX + B, <span className="text-green-500">p prime</span>
+            </h2>
+            <div className="w-full">
+              <div className="flex flex-col space-y-4">
+                <div className="flex flex-col">
+                  <label className="font-bold text-center sm:text-xl">Enter the coefficient of 'a':</label>
+                  <input
+                    type="text"
+                    id="a"
+                    className="border rounded w-full px-2 py-1"
+                    value={a}
+                    onChange={(e) => setA(e.target.value)}
+                  />
+                </div>
 
-          <div className="pt-3">
-            <table className="table-auto w-full text-base sm:text-xl ">
-              <tbody>
-                <tr className="flex flex-col sm:flex-row table-input">
-                  <td className="px-5 py-3 text-center font-bold sm:w-1/2">
-                    Enter the coefficient of 'a':
-                  </td>
-                  <td className="px-3 py-2 sm:w-1/2">
-                    <input
-                      type="text"
-                      id="a"
-                      className="border rounded w-[80%] px-2 py-1"
-                      value={a}
-                      onChange={(e) => setA(e.target.value)}
-                    />
-                  </td>
-                </tr>
+                <div className="flex flex-col">
+                  <label className="font-bold text-center sm:text-xl">Enter the coefficient of 'b':</label>
+                  <input
+                    type="text"
+                    id="b"
+                    className="border rounded w-full px-2 py-1"
+                    value={b}
+                    onChange={(e) => setB(e.target.value)}
+                  />
+                </div>
 
-                <tr className="flex flex-col sm:flex-row table-input">
-                  <td className="px-2 py-3 text-center font-bold sm:w-1/2">
-                    Enter the coefficient of 'b':
-                  </td>
-                  <td className="px-4 py-2 sm:w-1/2">
-                    <input
-                      type="text"
-                      id="b"
-                      className="border rounded w-[80%]  px-2 py-1"
-                      value={b}
-                      onChange={(e) => setB(e.target.value)}
-                    />
-                  </td>
-                </tr>
+                <div className="flex flex-col">
+                  <label className="font-bold text-center sm:text-xl">Enter the modulo 'p':</label>
+                  <input
+                    type="text"
+                    id="p"
+                    className="border rounded w-full px-2 py-1"
+                    value={p}
+                    onChange={(e) => setP(e.target.value)}
+                  />
+                </div>
+              </div>
+            </div>
 
-                <tr className="flex flex-col sm:flex-row table-input">
-                  <td className="px-2 py-3 text-center font-bold sm:w-1/2">
-                    Enter the modulo 'p':
-                  </td>
-                  <td className="px-4 py-2 sm:w-1/2">
-                    <input
-                      type="text"
-                      id="p"
-                      className="border rounded w-[80%]  px-2 py-1"
-                      value={p}
-                      onChange={(e) => setP(e.target.value)}
-                    />
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
-            <div className="flex justify-center pt-5">
+            <div className="flex justify-center pt-6">
               <button
                 ref={buttonRef}
-                className="bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                className="bg-blue-800 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
                 onClick={calculatePoints}
               >
                 Calculate
@@ -146,22 +132,22 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="tab-head text-center pt-4 pb-6 text-4xl result-text">
-            <h2>Points on Elliptical curve</h2>
+          <div className="text-center pb-4 text-2xl sm:text-3xl">
+            <h2>Points on Elliptical Curve</h2>
           </div>
 
-          <table id="pointsTable" className="table-auto bg-gray-800 text-white text-xl sm:w-1/2 text-center px-4 rounded-lg shadow-lg pb-4 result-text">
+          <table id="pointsTable" className="table-auto bg-gray-800 text-white text-sm sm:text-lg text-center w-full rounded-lg shadow-lg">
             <thead>
               <tr>
-                <th className="px-4 py-2 text-align-center">x-Axis Point</th>
-                <th className="px-4 py-2 text-align-center">Y-Axis Point</th>
+                <th className="px-2 py-2">X-Axis Point</th>
+                <th className="px-2 py-2">Y-Axis Point</th>
               </tr>
             </thead>
             <tbody>
               {points.map((point, index) => (
                 <tr key={index}>
-                  <td className="px-4 py-2">{point[0]}</td>
-                  <td className="px-4 py-2">{point[1]}</td>
+                  <td className="px-2 py-2">{point[0]}</td>
+                  <td className="px-2 py-2">{point[1]}</td>
                 </tr>
               ))}
             </tbody>
